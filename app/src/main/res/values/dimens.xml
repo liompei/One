@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cat_toc_item_size">180dp</dimen>
+</resources>

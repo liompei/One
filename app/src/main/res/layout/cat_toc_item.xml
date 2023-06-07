@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/cat_toc_item_size"
+    android:foreground="?selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/cat_toc_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                tools:src="@drawable/ic_text_field_24px" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/cat_toc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            tools:text="Text Field" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cat_toc_status_wip_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="8dp"
+        android:background="@color/cat_toc_status_wip_background_color"
+        android:paddingLeft="48dp"
+        android:paddingTop="2dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="2dp"
+        android:rotation="45"
+        android:text="@string/cat_toc_status_wip"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/cat_toc_status_wip_text_color"
+        android:translationX="48dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</FrameLayout>

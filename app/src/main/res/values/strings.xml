@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">One</string>
+    <string name="cat_toc_status_wip">WIP</string>
 </resources>
