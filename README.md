@@ -2,7 +2,7 @@
 
 ### Android 开发，One 就够了
 
-One 是一个 Android 项目开发示例
+**One 是一个 Android 项目开发示例**
 
 通过此项目你可以了解到
 
@@ -27,5 +27,7 @@ One 是一个 Android 项目开发示例
 - 代码混淆和保护
 - 渠道包生成
 - .ignore 配置
+
+***
 
 Developed via Android Studio Flamingo | 2022.2.1 Patch 2
