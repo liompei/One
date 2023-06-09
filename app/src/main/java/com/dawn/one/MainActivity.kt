@@ -1,12 +1,15 @@
 package com.dawn.one
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.core.math.MathUtils
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dawn.one.adapter.TocAdapter
 import com.dawn.one.data.FeatureDemo
 import com.dawn.one.databinding.ActivityMainBinding
+import com.dawn.one.ui.M3Activity
 import com.dawn.one.ui.base.BaseActivity
+import com.dawn.one.utilities.Jump
 
 class MainActivity : BaseActivity() {
 
@@ -32,7 +35,14 @@ class MainActivity : BaseActivity() {
     private fun initView(savedInstanceState: Bundle?) {
         val gridSpanCount = calculateGridSpanCount()
 
-        val tocAdapter = TocAdapter(buildFeatureList())
+        tocAdapter = TocAdapter(buildFeatureList())
+        tocAdapter.setOnItemClickListener { view, position, featureDemo ->
+            when (position) {
+                0 -> {
+                    Jump.startActivityInternal(this, M3Activity::class.java, view)
+                }
+            }
+        }
         binding.mainRecyclerView.apply {
             layoutManager = GridLayoutManager(context, gridSpanCount)
 
