@@ -1,21 +1,13 @@
 package com.dawn.lib.network.retrofit
 
 import com.dawn.lib.common.BuildConfig
-import com.dawn.lib.network.OneNetworkDataSource
-import com.dawn.lib.network.model.NetworkChangeList
-import com.dawn.lib.network.model.NetworkNewsResource
-import com.dawn.lib.network.model.NetworkTopic
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import okhttp3.Call
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.http.GET
-import retrofit2.http.Query
 
 abstract class RetrofitOneNetwork {
 

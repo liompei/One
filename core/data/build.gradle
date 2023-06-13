@@ -34,4 +34,5 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:model"))
     implementation(project(":core:network"))
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
 }

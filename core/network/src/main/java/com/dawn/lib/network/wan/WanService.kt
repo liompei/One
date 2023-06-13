@@ -1,7 +1,9 @@
 package com.dawn.lib.network.wan
 
+import com.dawn.lib.network.model.NetworkArticle
 import com.dawn.lib.network.retrofit.NetworkResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface WanService {
 
@@ -20,8 +22,10 @@ interface WanService {
     /**
      * 文章列表
      */
-    @GET("article/list/0/json")
-    suspend fun getArticleList(): NetworkResponse<String>
+    @GET("article/list/{page}/json")
+    suspend fun getArticleList(
+        @Path("page") page: Int
+    ): NetworkResponse<NetworkArticle>
 
 
     /**
