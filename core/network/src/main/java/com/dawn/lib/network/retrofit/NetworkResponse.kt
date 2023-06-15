@@ -7,4 +7,9 @@ data class NetworkResponse<T>(
     val data: T,
     val errorCode: Int,
     val errorMsg: String
-)
+) {
+
+    val success: Boolean
+        get() = errorCode == 0
+
+}

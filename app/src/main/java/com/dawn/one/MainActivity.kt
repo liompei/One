@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.core.math.MathUtils
 import androidx.recyclerview.widget.GridLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.dawn.one.adapter.TocAdapter
 import com.dawn.one.data.FeatureDemo
 import com.dawn.one.databinding.ActivityMainBinding
@@ -11,6 +13,7 @@ import com.dawn.one.ui.M3Activity
 import com.dawn.one.ui.base.BaseActivity
 import com.dawn.one.utilities.Jump
 
+@Route(path = "/app/activity/MainActivity")
 class MainActivity : BaseActivity() {
 
     companion object {
@@ -40,6 +43,10 @@ class MainActivity : BaseActivity() {
             when (position) {
                 0 -> {
                     Jump.startActivityInternal(this, M3Activity::class.java, view)
+                }
+
+                1 -> {
+                    ARouter.getInstance().build("/wan/activity/WanActivity").navigation()
                 }
             }
         }
