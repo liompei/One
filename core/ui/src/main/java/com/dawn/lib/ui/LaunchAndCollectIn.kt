@@ -1,0 +1,27 @@
+package com.dawn.lib.ui
+
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
+
+/**
+ * https://gist.github.com/manuelvicnt/127d88744c7f265328df9998c8d92a3b
+ */
+inline fun <T> Flow<T>.launchAndCollectIn(
+    owner: LifecycleOwner,
+    minActiveState: Lifecycle.State = Lifecycle.State.STARTED,
+    crossinline action: suspend CoroutineScope.(T) -> Unit
+): Job {
+    return owner.lifecycleScope.launch {
+        owner.repeatOnLifecycle(minActiveState) {
+            collect {
+                action(it)
+            }
+        }
+    }
+}

@@ -25,12 +25,8 @@ class WanViewModel constructor(
         Log.d("aaaaaaaaaa", "init")
     }
 
-    val onWanArticleUiState: StateFlow<UiState<List<Article>>> =
+    val onWanArticleUiState: StateFlow<UiState<Article>> =
         wanArticleUseCase.invoke()
-//            .map {
-//                Log.d("aaaaaaaaaa", "aaa")
-//                it
-//            }
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5_000),

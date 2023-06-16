@@ -13,7 +13,7 @@ object WanNetwork : RetrofitOneNetwork() {
         super.handleBuilder(builder)
     }
 
-    suspend fun getArticleList(page: Int): NetworkResponse<List<Article>> {
+    suspend fun getArticleList(page: Int): NetworkResponse<Article> {
         return service.getArticleList(page)
     }
 

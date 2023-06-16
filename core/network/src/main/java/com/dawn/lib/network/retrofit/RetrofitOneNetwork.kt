@@ -27,7 +27,7 @@ abstract class RetrofitOneNetwork {
         handleBuilder(okHttpBuilder)
         okHttpBuilder.addInterceptor(
             HttpLoggingInterceptor(){
-                Log.e("aaaaaaaaaa","$it")
+                Log.e("httplog","$it")
             }
                 .apply {
                     if (BuildConfig.DEBUG) {

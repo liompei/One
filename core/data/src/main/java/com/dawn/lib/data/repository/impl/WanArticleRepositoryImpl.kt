@@ -7,7 +7,7 @@ import com.dawn.lib.network.wan.WanNetwork
 
 class WanArticleRepositoryImpl : WanArticleRepository {
 
-    override suspend fun getWanArticleList(page: Int): NetStateResult<List<Article>> {
+    override suspend fun getWanArticleList(page: Int): NetStateResult<Article> {
         return safeCall {
             WanNetwork.getArticleList(page)
         }

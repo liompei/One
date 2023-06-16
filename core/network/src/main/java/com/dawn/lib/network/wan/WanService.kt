@@ -8,7 +8,7 @@ import retrofit2.http.Path
 interface WanService {
 
     companion object {
-        const val BASE_URL = "https://www.wanandroid.com"
+        const val BASE_URL = "https://wanandroid.com"
     }
 
     /**
@@ -17,7 +17,7 @@ interface WanService {
     @GET("article/list/{page}/json")
     suspend fun getArticleList(
         @Path("page") page: Int
-    ): NetworkResponse<List<Article>>
+    ): NetworkResponse<Article>
 
 
     /**

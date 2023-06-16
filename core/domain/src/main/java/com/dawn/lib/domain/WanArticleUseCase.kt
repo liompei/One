@@ -1,6 +1,5 @@
 package com.dawn.lib.domain
 
-import android.util.Log
 import com.dawn.lib.data.repository.WanArticleRepository
 import com.dawn.lib.model.Article
 import com.dawn.lib.model.state.UiState
@@ -12,7 +11,7 @@ class WanArticleUseCase constructor(
     private val wanArticleRepository: WanArticleRepository
 ) {
 
-    operator fun invoke(page: Int = 0): Flow<UiState<List<Article>>> {
+    operator fun invoke(page: Int = 0): Flow<UiState<Article>> {
         return flow {
             emit(wanArticleRepository.getWanArticleList(page).asUiState())
         }

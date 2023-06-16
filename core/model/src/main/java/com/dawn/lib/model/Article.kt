@@ -1,5 +1,8 @@
 package com.dawn.lib.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Article(
     val curPage: Int,
     val datas: List<ArticleData>,
@@ -9,7 +12,7 @@ data class Article(
     val size: Int,
     val total: Int
 )
-
+@Serializable
 data class ArticleData(
     val adminAdd: Boolean,
     val apkLink: String,
@@ -47,7 +50,7 @@ data class ArticleData(
     val visible: Int,
     val zan: Int
 )
-
+@Serializable
 data class ArticleDataTag(
     val name: String,
     val url: String
