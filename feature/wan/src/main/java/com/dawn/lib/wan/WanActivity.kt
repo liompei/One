@@ -15,6 +15,8 @@ import com.dawn.lib.ui.launchAndCollectIn
 import com.dawn.lib.ui.onError
 import com.dawn.lib.ui.onLoading
 import com.dawn.lib.ui.onSuccess
+import com.dawn.lib.wan.databinding.WanActivityWanBinding
+import com.google.android.material.navigation.NavigationBarView
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.launch
@@ -22,11 +24,22 @@ import kotlinx.coroutines.launch
 @Route(path = "/wan/activity/WanActivity")
 class WanActivity : AppCompatActivity() {
 
+    private lateinit var binding: WanActivityWanBinding
     private val viewModel by viewModels<WanViewModel> { WanViewModel.Factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.wan_activity_wan)
+        binding = WanActivityWanBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.action_article -> {
+                    Log.d("aaaaaa", "aaaa")
+                }
+            }
+            return@setOnItemSelectedListener true
+        }
         viewModel.onWanArticleUiState
             .launchAndCollectIn(this) {
                 it
@@ -34,7 +47,7 @@ class WanActivity : AppCompatActivity() {
                         Log.d("aaaaaaa ", "a")
                     }
                     .onSuccess {
-                        Log.d("aaaaaaa ", "b")
+                        Log.d("aaaaaaa ", "$it")
                     }
                     .onError { errCode, errMessage ->
                         Log.d("aaaaaaa ", "c")

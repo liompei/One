@@ -56,5 +56,6 @@ dependencies {
     implementation 'com.github.jadepeakpoet.ARouter:arouter-api:1.0.3'
     kapt 'com.github.jadepeakpoet.ARouter:arouter-compiler:1.0.3'
     //feature
+    implementation(project(":core:ui"))
     implementation(project(":feature:wan"))
 }

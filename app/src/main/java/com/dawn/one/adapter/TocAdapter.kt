@@ -8,15 +8,16 @@ import android.widget.ImageView
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.dawn.lib.ui.OnItemClickListener
 import com.dawn.one.R
 import com.dawn.one.data.FeatureDemo
 import com.dawn.one.databinding.CatTocItemBinding
 
-typealias OnItemClickListener = (view: View, position: Int, featureDemo: FeatureDemo) -> Unit
+
 
 class TocAdapter(private val featureDemos: List<FeatureDemo>) : Adapter<TocViewHolder>() {
 
-    private var onItemClickListener: OnItemClickListener? = null
+    private var onItemClickListener: OnItemClickListener<FeatureDemo>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TocViewHolder {
         return TocViewHolder(
@@ -37,7 +38,7 @@ class TocAdapter(private val featureDemos: List<FeatureDemo>) : Adapter<TocViewH
     }
 
 
-    fun setOnItemClickListener(listener: OnItemClickListener) {
+    fun setOnItemClickListener(listener: OnItemClickListener<FeatureDemo>) {
         this.onItemClickListener = listener
     }
 
@@ -51,7 +52,7 @@ class TocViewHolder(view: View) : ViewHolder(view) {
     val catTocImage = view.findViewById<ImageView>(R.id.cat_toc_image)
 
 
-    fun bind(listener: OnItemClickListener? = null, featureDemo: FeatureDemo, position: Int) {
+    fun bind(listener: OnItemClickListener<FeatureDemo>? = null, featureDemo: FeatureDemo, position: Int) {
         val title = featureDemo.title
         ViewCompat.setTransitionName(binding.root, title)
         catTocTitle.text = title

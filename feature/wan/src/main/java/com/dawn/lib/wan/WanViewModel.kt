@@ -22,7 +22,7 @@ class WanViewModel constructor(
 ) : ViewModel() {
 
     init {
-        Log.d("aaaaaaaaaa", "init")
+
     }
 
     val onWanArticleUiState: StateFlow<UiState<Article>> =

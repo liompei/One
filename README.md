@@ -7,10 +7,13 @@
 通过此项目你可以了解到
 
 - Android Studio 项目的基本开发配置
-- MVVM Clean 架构
+- MVI Clean-Architecture 架构
+- Android 模块化最佳实践
 - [Material 3](https://m3.material.io/)
+- Jetpack
 - Application、Activity、Fragment 基类的基本设计
-- Retrofit的结构封装和状态封装，header、cookie 配置，网络优化
+- Retrofit 状态封装，header、cookie 配置，网络优化
+- [kotlinx-serialization](https://github.com/Kotlin/kotlinx.serialization)
 - 深色模式的适配
 - RecyclerView 加载、回调、动画
 - 图片加载和优化方案
